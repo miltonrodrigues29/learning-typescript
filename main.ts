@@ -87,10 +87,10 @@
 // });
 
 class Point {
-  private x: number;
-  private y: number;
-
-  constructor(x?: number, y?: number) {
+  // private x: number;
+  // private y: number;
+  // you can use this instead of definitions in the constructor parameters
+  constructor(private x?: number, private y?: number) {
     this.x = x;
     this.y = y;
   }
@@ -99,9 +99,21 @@ class Point {
     console.log(`X: ${this.x} and Y: ${this.y}`);
     // ...
   }
-  getDistace(another: Point) {}
+  getX() {
+    return this.x;
+  }
+
+  setX(value: number) {
+    if (value < 0) {
+      throw new Error("Value cannot be less than 0");
+    }
+    this.x = value;
+  }
 }
 
 let point = new Point(1);
-
 point.draw();
+
+point.setX(99);
+
+console.log(point.getX());

@@ -75,8 +75,18 @@ var Point = /** @class */ (function () {
         console.log("X: ".concat(this.x, " and Y: ").concat(this.y));
         // ...
     };
-    Point.prototype.getDistace = function (another) { };
+    Point.prototype.getX = function () {
+        return this.x;
+    };
+    Point.prototype.setX = function (value) {
+        if (value < 0) {
+            throw new Error("Value cannot be less than 0");
+        }
+        this.x = value;
+    };
     return Point;
 }());
 var point = new Point(1);
 point.draw();
+point.setX(99);
+console.log(point.getX());
