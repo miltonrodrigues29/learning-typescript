@@ -60,7 +60,23 @@
 
 //custome types
 
-let drawPoint = (point) => {
+// let drawPoint = (point) => {
+//   console.log(point.x);
+//   console.log(point.y);
+// };
+
+// drawPoint({
+//   x: 1,
+//   y: 2,
+// });
+
+//inline annotation
+interface Point {
+  x: number;
+  y: number;
+}
+
+let drawPoint = (point: Point) => {
   console.log(point.x);
   console.log(point.y);
 };
