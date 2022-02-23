@@ -71,17 +71,37 @@
 // });
 
 //inline annotation
-interface Point {
-  x: number;
-  y: number;
+// interface Point {
+//   x: number;
+//   y: number;
+// }
+
+// let drawPoint = (point: Point) => {
+//   console.log(point.x);
+//   console.log(point.y);
+// };
+
+// drawPoint({
+//   x: 1,
+//   y: 2,
+// });
+
+class Point {
+  private x: number;
+  private y: number;
+
+  constructor(x?: number, y?: number) {
+    this.x = x;
+    this.y = y;
+  }
+  public draw() {
+    console.log("Hello World!");
+    console.log(`X: ${this.x} and Y: ${this.y}`);
+    // ...
+  }
+  getDistace(another: Point) {}
 }
 
-let drawPoint = (point: Point) => {
-  console.log(point.x);
-  console.log(point.y);
-};
+let point = new Point(1);
 
-drawPoint({
-  x: 1,
-  y: 2,
-});
+point.draw();
