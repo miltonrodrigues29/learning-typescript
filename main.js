@@ -38,7 +38,17 @@
 // ----------------------------
 // let doLog = (message) => console.log(message);
 // doLog("Hi");
-var doLog = function (message) {
-    console.log(message);
+// let doLog = (message) => {
+//   console.log(message);
+// };
+// doLog("Hello");
+// ^ arrow functions
+//custome types
+var drawPoint = function (point) {
+    console.log(point.x);
+    console.log(point.y);
 };
-doLog("Hello");
+drawPoint({
+    x: 1,
+    y: 2
+});

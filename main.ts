@@ -57,3 +57,15 @@
 // doLog("Hello");
 
 // ^ arrow functions
+
+//custome types
+
+let drawPoint = (point) => {
+  console.log(point.x);
+  console.log(point.y);
+};
+
+drawPoint({
+  x: 1,
+  y: 2,
+});
