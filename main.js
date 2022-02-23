@@ -1,27 +1,19 @@
 // function log(message) {
 //   console.log(message);
 // }
-
 // var message = "Hello World!";
-
 // log(message);
-
 // ---------------------------
-
 // function doSomething() {
 //   for (let x = 0; x < 5; x++) {
 //     console.log(x);
 //   }
 //   console.log(`Finally: ${x}`);
 // }
-
 // doSomething();
-
 // let count = 5;
 // count = "a";
-
 // -----------------------
-
 // let a: number;
 // let b: boolean;
 // let c: string;
@@ -35,7 +27,6 @@
 // }
 // let bgColor = Color.Blue;
 // console.log(bgColor);
-
 // let message;
 // message = "abc";
 // //now message could be anyhting as it is not initialized anything, it could be string number etc
@@ -44,16 +35,10 @@
 // console.log(endsWithC);
 // let alternativeWay = (<string>message).endsWith("d");
 // console.log(alternativeWay);
-
 // ----------------------------
-
 // let doLog = (message) => console.log(message);
 // doLog("Hi");
-
-// let doLog = (message) => {
-//   console.log(message);
-// };
-
-// doLog("Hello");
-
-// ^ arrow functions
+var doLog = function (message) {
+    console.log(message);
+};
+doLog("Hello");
