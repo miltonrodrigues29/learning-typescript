@@ -90,30 +90,30 @@ class Point {
   // private x: number;
   // private y: number;
   // you can use this instead of definitions in the constructor parameters
-  constructor(private x?: number, private y?: number) {
-    this.x = x;
-    this.y = y;
+  constructor(private _x?: number, private _y?: number) {
+    this._x = _x;
+    this._y = _y;
   }
   public draw() {
     console.log("Hello World!");
-    console.log(`X: ${this.x} and Y: ${this.y}`);
+    console.log(`X: ${this._x} and Y: ${this._y}`);
     // ...
   }
-  getX() {
-    return this.x;
+  get X() {
+    return this._x;
   }
 
-  setX(value: number) {
+  set X(value) {
     if (value < 0) {
       throw new Error("Value cannot be less than 0");
     }
-    this.x = value;
+    this._x = value;
   }
 }
 
 let point = new Point(1);
 point.draw();
 
-point.setX(99);
+point.X = 99;
 
-console.log(point.getX());
+console.log(point.X);

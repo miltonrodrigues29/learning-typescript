@@ -66,27 +66,36 @@
 //   y: 2,
 // });
 var Point = /** @class */ (function () {
-    function Point(x, y) {
-        this.x = x;
-        this.y = y;
+    // private x: number;
+    // private y: number;
+    // you can use this instead of definitions in the constructor parameters
+    function Point(_x, _y) {
+        this._x = _x;
+        this._y = _y;
+        this._x = _x;
+        this._y = _y;
     }
     Point.prototype.draw = function () {
         console.log("Hello World!");
-        console.log("X: ".concat(this.x, " and Y: ").concat(this.y));
+        console.log("X: ".concat(this._x, " and Y: ").concat(this._y));
         // ...
     };
-    Point.prototype.getX = function () {
-        return this.x;
-    };
-    Point.prototype.setX = function (value) {
-        if (value < 0) {
-            throw new Error("Value cannot be less than 0");
-        }
-        this.x = value;
-    };
+    Object.defineProperty(Point.prototype, "X", {
+        get: function () {
+            return this._x;
+        },
+        set: function (value) {
+            if (value < 0) {
+                throw new Error("Value cannot be less than 0");
+            }
+            this._x = value;
+        },
+        enumerable: false,
+        configurable: true
+    });
     return Point;
 }());
 var point = new Point(1);
 point.draw();
-point.setX(99);
-console.log(point.getX());
+point.X = 99;
+console.log(point.X);
